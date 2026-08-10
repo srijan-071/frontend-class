@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+        :root {
+            --bg: #f3efe7;
+            --card: #fffaf3;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --accent: #0b3164;
+            --accent-2: #d97706;
+            --shadow: 0 24px 60px rgba(31, 41, 55, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top, #fff7e6 0%, transparent 35%),
+                linear-gradient(135deg, #f8f3ea 0%, var(--bg) 100%);
+            color: var(--text);
+        }
+
+        .product-grid {
+            width: min(100%, 1120px);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            flex: 1 1 240px;
+            max-width: 260px;
+            background: var(--card);
+            border-radius: 20px;
+            box-shadow: 0 14px 32px rgba(31, 41, 55, 0.12);
+            overflow: hidden;
+            border: 1px solid rgba(11, 49, 100, 0.08);
+        }
+
+        .product-visual {
+            position: relative;
+            padding: 20px;
+            background: linear-gradient(160deg, #0b3164 0%, #124a8b 55%, #1d69bf 100%);
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.16);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+        }
+
+        .product-icon {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-icon::before {
+            content: "";
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.08);
+        }
+
+        .product-body {
+            padding: 18px;
+        }
+
+        .product-title {
+            margin: 0 0 6px;
+            font-size: 1.05rem;
+            line-height: 1.1;
+        }
+
+        .product-desc {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .product-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .rating {
+            color: var(--accent-2);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            border: 0;
+            border-radius: 12px;
+            padding: 14px 16px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn.primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(11, 49, 100, 0.25);
+        }
+
+        .btn.secondary {
+            background: #eef2f7;
+            color: var(--text);
+        }
+
+        .section-title {
+            width: 100%;
+            margin: 0 0 6px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .section-subtitle {
+            width: 100%;
+            margin: 0 0 18px;
+            text-align: center;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <main class="product-grid" aria-label="Product cards">
+        <h1 class="section-title"> Product Cards</h1>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">New</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">AeroFlex Runner</h2><p class="product-desc">Light, clean, and comfy for daily wear.</p><div class="product-meta"><div class="price">$89</div><div class="rating">4.8</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">Hot</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">Urban Tote</h2><p class="product-desc">Simple bag for school, work, or travel.</p><div class="product-meta"><div class="price">$34</div><div class="rating">4.6</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">Sale</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">Classic Watch</h2><p class="product-desc">Plain design with a neat everyday look.</p><div class="product-meta"><div class="price">$58</div><div class="rating">4.7</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">New</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">Desk Lamp</h2><p class="product-desc">Small lamp with a soft warm glow.</p><div class="product-meta"><div class="price">$22</div><div class="rating">4.5</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">Top</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">Coffee Mug</h2><p class="product-desc">Simple mug for tea, coffee, or water.</p><div class="product-meta"><div class="price">$12</div><div class="rating">4.9</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">Cool</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">Backpack</h2><p class="product-desc">Basic backpack with space for daily stuff.</p><div class="product-meta"><div class="price">$41</div><div class="rating">4.4</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">New</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">Headphones</h2><p class="product-desc">Soft sound and a simple shape.</p><div class="product-meta"><div class="price">$67</div><div class="rating">4.8</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+
+        <article class="product-card">
+            <section class="product-visual"><span class="badge">Best</span><div class="product-icon" aria-hidden="true"></div></section>
+            <section class="product-body"><h2 class="product-title">Water Bottle</h2><p class="product-desc">Easy carry bottle for everyday use.</p><div class="product-meta"><div class="price">$16</div><div class="rating">4.7</div></div><div class="actions"><button class="btn secondary">Details</button><button class="btn primary">Buy</button></div></section>
+        </article>
+    </main>
+</body>
+</html>

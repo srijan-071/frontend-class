@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Box</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: linear-gradient(135deg, #f5efe6 0%, #e8e0d6 100%);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .bento {
+            width: min(100%, 1100px);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .tile {
+            flex: 1 1 240px;
+            min-height: 220px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            display: flex;
+        }
+
+        .tile.large {
+            flex-basis: 520px;
+            min-height: 300px;
+        }
+
+        .tile.tall {
+            min-height: 340px;
+        }
+
+        .tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tile.double {
+            flex-basis: 360px;
+        }
+    </style>
+</head>
+<body>
+    <main class="bento" aria-label="Bento image layout">
+        <div class="tile large">
+            
+        </div>
+        <div class="tile double tall">
+            
+        </div>
+        <div class="tile">
+            
+        </div>
+        <div class="tile">
+        </div>
+        <div class="tile double">
+        </div>
+        <div class="tile">
+        </div>
+    </main>
+</body>
+</html>
