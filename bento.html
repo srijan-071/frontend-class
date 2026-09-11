@@ -12,9 +12,8 @@
         body {
             margin: 0;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            place-items: center;
             padding: 24px;
             background: linear-gradient(135deg, #f5efe6 0%, #e8e0d6 100%);
             font-family: Arial, Helvetica, sans-serif;
@@ -22,60 +21,70 @@
 
         .bento {
             width: min(100%, 1100px);
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: repeat(2, minmax(180px, 1fr));
+            grid-template-areas:
+                "featured tall small"
+                "featured wide small";
             gap: 18px;
         }
 
         .tile {
-            flex: 1 1 240px;
-            min-height: 220px;
+            min-height: 180px;
             border-radius: 24px;
-            overflow: hidden;
             background: #ffffff;
             box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
             border: 1px solid rgba(0, 0, 0, 0.06);
-            display: flex;
+            padding: 24px;
+            display: grid;
+            place-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        .tile.large {
-            flex-basis: 520px;
-            min-height: 300px;
+        .featured {
+            grid-area: featured;
+            min-height: 378px;
         }
 
-        .tile.tall {
-            min-height: 340px;
+        .tall {
+            grid-area: tall;
         }
 
-        .tile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        .small {
+            grid-area: small;
+            min-height: 378px;
         }
 
-        .tile.double {
-            flex-basis: 360px;
+        .wide {
+            grid-area: wide;
+        }
+
+        @media (max-width: 700px) {
+            .bento {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+                grid-template-areas:
+                    "featured"
+                    "tall"
+                    "wide"
+                    "small";
+            }
+
+            .featured,
+            .small {
+                min-height: 240px;
+            }
         }
     </style>
 </head>
 <body>
-    <main class="bento" aria-label="Bento image layout">
-        <div class="tile large" role="img" aria-label="Featured bento tile">
-            
-        </div>
-        <div class="tile double tall">
-            
-        </div>
-        <div class="tile">
-            
-        </div>
-        <div class="tile">
-        </div>
-        <div class="tile double">
-        </div>
-        <div class="tile">
-        </div>
+    <main class="bento" aria-label="Bento box layout">
+        <section class="tile featured">Featured</section>
+        <section class="tile tall">Tall</section>
+        <section class="tile small">Small</section>
+        <section class="tile wide">Wide</section>
     </main>
 </body>
 </html>
