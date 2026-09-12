@@ -33,6 +33,11 @@
             text-align: center;
         }
 
+        .card:focus-visible {
+            outline: 3px solid currentColor;
+            outline-offset: 4px;
+        }
+
         .card.red {
             background: red;
         }
@@ -49,6 +54,12 @@
             .container {
                 grid-template-columns: 1fr;
                 margin: 20px auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto;
             }
         }
     </style>
