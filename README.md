@@ -30,3 +30,4 @@ When adding or updating an exercise:
 2. Prefer semantic HTML and controls that are usable with a keyboard.
 3. Check the layout at both narrow and wide viewport sizes.
 4. Avoid adding dependencies when plain HTML, CSS, or JavaScript is enough.
+5. Check focus states and readable contrast when the example is interactive.
