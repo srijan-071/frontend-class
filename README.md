@@ -31,3 +31,7 @@ When adding or updating an exercise:
 3. Check the layout at both narrow and wide viewport sizes.
 4. Avoid adding dependencies when plain HTML, CSS, or JavaScript is enough.
 5. Check focus states and readable contrast when the example is interactive.
+
+## Responsive check
+
+Before considering an exercise complete, test at least one narrow viewport and one desktop-sized viewport. Look for horizontal overflow, clipped controls, and text that becomes difficult to read or operate.
