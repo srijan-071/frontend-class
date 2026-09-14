@@ -35,3 +35,7 @@ When adding or updating an exercise:
 ## Responsive check
 
 Before considering an exercise complete, test at least one narrow viewport and one desktop-sized viewport. Look for horizontal overflow, clipped controls, and text that becomes difficult to read or operate.
+
+## Accessibility check
+
+For interactive exercises, test keyboard navigation from the beginning to the end of the page. Make sure focus remains visible and that controls have clear accessible names.
