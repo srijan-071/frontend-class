@@ -24,13 +24,16 @@
 
         .card {
             min-height: 200px;
+            border: 0;
             border-radius: 10px;
             display: grid;
             place-items: center;
             color: white;
+            font: inherit;
             font-weight: 600;
             padding: 20px;
             text-align: center;
+            cursor: pointer;
         }
 
         .card:focus-visible {
@@ -66,9 +69,9 @@
 </head>
 <body>
     <main class="container" aria-label="Color card grid">
-        <article class="card red">Red</article>
-        <article class="card blue">Blue</article>
-        <article class="card green">Green</article>
+        <button class="card red" type="button">Red</button>
+        <button class="card blue" type="button">Blue</button>
+        <button class="card green" type="button">Green</button>
     </main>
 </body>
 </html>
