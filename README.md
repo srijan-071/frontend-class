@@ -39,3 +39,7 @@ Before considering an exercise complete, test at least one narrow viewport and o
 ## Accessibility check
 
 For interactive exercises, test keyboard navigation from the beginning to the end of the page. Make sure focus remains visible and that controls have clear accessible names.
+
+## Example: color grid
+
+The color-grid exercise in `grid.html` uses native buttons so it can be operated with keyboard controls without additional JavaScript.
